@@ -38,7 +38,7 @@ function onClickGallery(evt) {
         {
         onShow: (instance) => {
           document.addEventListener("keydown", (event) => {
-            if (event.code == "Escape") {
+            if (event.code === "Escape") {
               instance.close();
             }
           })
