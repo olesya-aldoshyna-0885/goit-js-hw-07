@@ -10,13 +10,15 @@ gallery.insertAdjacentHTML(`beforeend`, cardsMarkup);
 
 function createGallery(galleryItems) {
     return galleryItems.map(({ preview, original, description }) =>
-    `<a class="gallery__item"
-        href="${original}"
-        onclick = "return false">
-    <img class="gallery__image"
-        src="${preview}" 
-        alt="${description}"/>
-    </a>`)
+    `<li>
+        <a class="gallery__item"
+            href="${original}"
+            onclick = "return false">
+        <img class="gallery__image"
+            src="${preview}" 
+            alt="${description}"/>
+        </a>
+        </li>`)
     .join("");
 };
 
