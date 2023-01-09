@@ -27,7 +27,7 @@ gallery.addEventListener(`click`, onClickGallery);
 
 function onClickGallery(evt) {
     // console.log(evt.target);
-    if (evt.target.nodeName === !"IMG") {
+    if (evt.target.nodeName !== "IMG") {
         return;
     }
     const instance = basicLightbox.create(
@@ -37,12 +37,16 @@ function onClickGallery(evt) {
         `,
         {
         onShow: (instance) => {
-          document.addEventListener("keydown", (event) => {
-            if (event.code === "Escape") {
+          document.addEventListener("keydown", (evt) => {
+            if (evt.code === "Escape") {
               instance.close();
             }
+        
           })
-            },
+          },
+        onClose: (instance) => {
+          document.removeEventListener("keydown", evt)
+        },
       })
         .show(); 
 }

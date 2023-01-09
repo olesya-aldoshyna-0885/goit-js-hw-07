@@ -24,6 +24,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
     overlay : true,
     overlayOpacity : 0.8,
     captionsData : `alt`,
-    captionDelay : 250,
+    captionDelay: 250,
+    captionPosition: "bottom",
 });
 
